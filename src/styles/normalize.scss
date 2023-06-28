@@ -1,0 +1,25 @@
+@import "./utils/variables.scss";
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Nunito', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+
+  background-color: $main-gray;
+  color: rgba(0, 0, 0, 0.87);
+
+  scroll-behavior: smooth;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 40px;
+}
