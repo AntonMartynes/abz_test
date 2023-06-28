@@ -14,7 +14,7 @@ export const Header = () => (
       </a>
 
       <div className="header__buttons">
-        <a href="/">
+        <a href="#users">
           <Button text={'Users'} width={'100px'}  type={"button"}/>
         </a>
 
