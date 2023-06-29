@@ -6,9 +6,12 @@ import {UserCard} from "../UserCard";
 import {Button} from "../Button";
 import SyncLoader from "react-spinners/ClipLoader";
 
+interface Props {
+  isUpdated: boolean;
+}
 
 
-export const Users = () => {
+export const Users: React.FC<Props> = ({isUpdated}) => {
   const [users, setUsers] = useState<User[]>([]);
   const [url, setUrl] = useState('/users?count=6');
   const [isButtonHidden, setIsButtonHidden] = useState(false);
@@ -38,7 +41,7 @@ export const Users = () => {
       .finally(() => {
         setIsLoading(false);
       })
-  }, [url]);
+  }, [url, isUpdated]);
 
 
   const onShowMore = () => {

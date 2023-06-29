@@ -1,0 +1,144 @@
+@import "../../styles/utils/mixins";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    text-align: center;
+
+    margin-bottom: 50px;
+  }
+
+  &__shape {
+    @include onTablet {
+      width: 380px;
+    }
+
+    &-positions {
+      font-size: 16px;
+      line-height: 26px;
+
+      margin-bottom: 50px;
+
+      &__title {
+        margin-bottom: 11px;
+      }
+
+      &__option {
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        margin-bottom: 7px;
+
+        cursor: pointer;
+
+        &--radio {
+          width: 20px;
+          height: 20px;
+
+          margin-right: 12px;
+
+          border-radius: 50%;
+          border: 1px solid #D0CFCF;
+          transition: border-color .3s;
+
+          cursor: pointer;
+
+          &:checked {
+            display: grid;
+            place-content: center;
+
+            border-color: #00BDD3;
+          }
+
+          &::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em #00BDD3;
+          }
+
+          &:checked::before {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+
+    &-upload-input {
+      display: none;
+    }
+
+    &-upload-label {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      cursor: pointer;
+
+      border-radius: 4px;
+
+      width: 100%;
+      height: 54px;
+
+      margin-bottom: 50px;
+
+      &__text {
+        padding: 14px 15px;
+
+        font-size: 16px;
+        line-height: 26px;
+
+        border-radius: 4px 0 0 4px;
+
+        border: 1px solid rgba(0, 0, 0, 0.87);
+      }
+
+      &__photo {
+        font-size: 16px;
+        line-height: 26px;
+        color: #7E7E7E;
+
+        width: 100%;
+
+        padding: 14px 0 14px 16px;
+
+        border-top: 1px solid #D0CFCF;
+        border-right: 1px solid #D0CFCF;
+        border-bottom: 1px solid #D0CFCF;
+
+        border-radius: 0 4px 4px 0;
+
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        transition: border-color .3s;
+
+        &:hover {
+          border-color: rgba(0, 0, 0, 0.87);
+
+          color: rgba(0, 0, 0, 0.87);
+        }
+      }
+    }
+
+    &-submit {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__isSend {
+    width: 100%;
+    height: 300px;
+    background-image: url('../../assets/success-image.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

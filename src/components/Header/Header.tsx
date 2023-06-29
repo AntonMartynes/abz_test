@@ -18,7 +18,7 @@ export const Header = () => (
           <Button text={'Users'} width={'100px'}  type={"button"}/>
         </a>
 
-        <a href="/">
+        <a href="#form">
           <Button text={'Sign up'} width={'100px'}  type={"button"}/>
         </a>
       </div>

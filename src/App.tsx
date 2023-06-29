@@ -1,19 +1,22 @@
-
-import './styles/main.scss';
+import {useState} from "react"; 
 import { Header } from './components/Header';
 import { Banner } from './components/Banner';
 import { Users } from './components/Users';
+import { Form } from './components/Form';
 
-function App() {
+import './styles/main.scss';
+
+export const App = () => {
+  const [isUpdated, setIsUpdated] = useState(false);
+
   return (
     <div className="App">
-     <Header />
-     <Banner />
-      <div className="main-container">
-        <Users />
-      </div>
+      <Header />
+      <Banner />
+        <div className="main-container">
+          <Users isUpdated={isUpdated} />
+          <Form setIsUpdated={setIsUpdated} isUpdated={isUpdated}/>
+        </div>
     </div>
   );
 }
-
-export default App;

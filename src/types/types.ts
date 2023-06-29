@@ -21,3 +21,18 @@ export interface apiResponse {
   },
   "users": User[],
 }
+
+export interface apiResponsePositions {
+  "success": boolean,
+  "positions": Position[],
+}
+
+export interface Position {
+  "id": number,
+  "name": string,
+}
+
+export interface apiResponseToken {
+  "success": boolean,
+  "token": string,
+}
